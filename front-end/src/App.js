@@ -26,11 +26,26 @@ class App extends React.Component {
   }
   
   signInUser() {
-    alert(this.state.userValue);
+    axios.get('/api/user', {params: {username:this.state.userValue, password:this.state.passValue}}).then(response => {
+      console.log(response.data);
+    }).catch(error => {
+      if (error.response.status === 401) {
+        console.log("Invalid Credentials");
+      }
+      else {
+        console.log(error);
+      }
+    });
   }
   
   signUpUser() {
-    alert(this.state.passValue);
+    axios.post('/api/new-user', {username:this.state.userValue, password:this.state.passValue}).then(response => {
+      console.log(response.data);
+    }).catch(error => {
+      if (error.response.status === 409) {
+        console.log("Username Already Taken");
+      }
+    });
   }
   
   render() {
