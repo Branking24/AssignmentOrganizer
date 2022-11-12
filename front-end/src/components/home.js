@@ -64,7 +64,7 @@ class Home extends React.Component {
           </div>
           <div class="home-text-group">
             <p>Password:</p>
-            <input type="password" value={this.state.passValue} autofocus="autofocus" onChange={this.handlePassChange} />
+            <input type="password" value={this.state.passValue} onChange={this.handlePassChange} />
           </div>
         </div>
         <div class="home_buttons">
