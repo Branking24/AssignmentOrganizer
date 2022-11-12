@@ -1,14 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 
-class AddAssignment extends React.Component {
+class EditAssignment extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          assignmentName: "",
-          className: "",
-          dueDate: "",
-          assignmentDescription: ""
+          assignmentName: this.props.currAssignment.name,
+          className: this.props.currAssignment.className,
+          dueDate: this.props.currAssignment.dueDate,
+          assignmentDescription: this.props.currAssignment.description
         };
         
         this.handleAssignmentNameChange = this.handleAssignmentNameChange.bind(this);
@@ -40,7 +40,7 @@ class AddAssignment extends React.Component {
     }
     
     submitAssignment() {
-        let uri = '/api/new-assignment/' + this.props.loggedUser;
+        let uri = '/api/assignments/' + this.props.loggedUser + '/' + this.props.currAssignment.assignment_id;
         let assignment = {
             name: this.state.assignmentName,
             className: this.state.className,
@@ -48,7 +48,7 @@ class AddAssignment extends React.Component {
             classDescription: this.state.assignmentDescription
             
         };
-        axios.post(uri, assignment).then(response => {
+        axios.put(uri, assignment).then(response => {
             console.log(response);
             this.props.appStateSet("viewer");
         }).catch(error => {
@@ -63,7 +63,7 @@ class AddAssignment extends React.Component {
     render() {
         return (
             <div class="overview">
-                <h1>Add Assignment</h1>
+                <h1>Edit Assignment</h1>
                 <div class="input-boxes">
                     <div class="input-group">
                         <p>Name of Assignment:</p>
@@ -92,4 +92,4 @@ class AddAssignment extends React.Component {
     }
 }
 
-export default AddAssignment;
+export default EditAssignment;

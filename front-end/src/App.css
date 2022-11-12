@@ -8,8 +8,34 @@
   flex-direction: column;
   
 }
+
 .home-text-group {
   display: flex;
   justify-content: center;
   margin: 20px;
+}
+
+.assignment-box {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.assignments-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.assignment-viewer-menu {
+  display: flex;
+  justify-content: space-between;
 }

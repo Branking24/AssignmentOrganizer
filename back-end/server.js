@@ -42,14 +42,19 @@ const User = mongoose.model('User', userSchema);
 
 const Assignment = mongoose.model('Assignment', assignmentSchema);
 
-app.get('/api/user/', async (req, res) => {
+app.get('/api/user', async (req, res) => {
    try {
        let users = await User.find();
-       let curUser = users.find(element => element.username === req.body.username);
-       if (curUser.password === req.body.password) {
+       let curUser = users.find(element => element.username === req.query.username);
+       if (curUser === undefined) {
+           console.log("User does not exist");
+           res.sendStatus(401);
+       }
+       else if (curUser.password === req.query.password) {
            res.send({user: curUser.username});
        }
        else {
+           console.log("Invalid Password");
            res.sendStatus(401);
        }
    } catch (error) {
@@ -84,7 +89,7 @@ app.post('/api/new-user', async (req, res) => {
 app.get('/api/assignments/:user', async (req, res) => {
     try {
         let assignments = await Assignment.find();
-        let curAssignments = assignments.find(element => element.associatedUser === req.params.user);
+        let curAssignments = assignments.filter(element => element.associatedUser === req.params.user);
         res.send({assignments: curAssignments});
     } catch (error) {
         console.log(error);
@@ -124,7 +129,7 @@ app.delete('/api/assignments/:user/:id', async(req, res) => {
     }
 });
 
-app.put('api/assignments/:user/:id', async (req, res) => {
+app.put('/api/assignments/:user/:id', async (req, res) => {
    try {
        let assignments = await Assignment.find();
        let assignment = assignments.find(element => element.assignment_id === req.params.id && element.associatedUser === req.params.user);
