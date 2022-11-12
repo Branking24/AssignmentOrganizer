@@ -41,10 +41,10 @@ class AssignmentViewer extends React.Component {
         return(
             <div class='all'>
                 <div class='assignment-viewer-menu'>
-                    <button onClick={this.logoutUser}>Logout</button>
-                    <button onClick={this.addAssignment}>Add Assignment</button>
+                    <button class='menu-button' onClick={this.logoutUser}>Logout</button>
+                    <button class='menu-button' onClick={this.addAssignment}>Add Assignment</button>
                 </div>
-                <h1>Assignments</h1>
+                <h1 class='viewer-intro'>Assignments</h1>
                 <div class='assignments-list'>
                     {this.state.assignments.map(assignment => (
                         <Assignment currAssignment={assignment} loggedUser={this.props.loggedUser} callBackUpdate={this.getAssignments} appEditer={this.goToEditer} appSetCurrAssignment={this.props.appAssignment}/>

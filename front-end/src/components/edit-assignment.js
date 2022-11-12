@@ -63,28 +63,28 @@ class EditAssignment extends React.Component {
     render() {
         return (
             <div class="overview">
-                <h1>Edit Assignment</h1>
+                <h1 class='input-title'>Edit Assignment</h1>
                 <div class="input-boxes">
                     <div class="input-group">
-                        <p>Name of Assignment:</p>
-                        <input type="text" value={this.state.assignmentName} onChange={this.handleAssignmentNameChange}/>
+                        <p class='input-label'>Name of Assignment</p>
+                        <input class='input-assignment-box' type="text" value={this.state.assignmentName} onChange={this.handleAssignmentNameChange}/>
                     </div>
                     <div class="input-group">
-                        <p>Class Name:</p>
-                        <input type="text" value={this.state.className} onChange={this.handleClassNameChange} />
+                        <p class='input-label'>Class Name</p>
+                        <input class='input-assignment-box' type="text" value={this.state.className} onChange={this.handleClassNameChange} />
                     </div>
                     <div class="input-group">
-                        <p>Due Date:</p>
-                        <input type="text" value={this.state.dueDate} onChange={this.handleDueDateChange} />
+                        <p class='input-label'>Due Date</p>
+                        <input class='input-assignment-box' type="text" value={this.state.dueDate} onChange={this.handleDueDateChange} />
                     </div>
                     <div class="input-group">
-                        <p>Description:</p>
-                        <input type="text" value={this.state.assignmentDescription} onChange={this.handleDescriptionChange} />
+                        <p class='input-label'>Description</p>
+                        <input class='input-assignment-box' type="text" value={this.state.assignmentDescription} onChange={this.handleDescriptionChange} />
                     </div>
                 </div>
-                <div class="submit-buttons">
-                    <button onClick={this.submitAssignment}>Submit</button>
-                    <button onClick={this.cancelAssignment}>Cancel</button>
+                <div class="home_buttons">
+                    <button class='input-button' onClick={this.submitAssignment}>Submit</button>
+                    <button class='input-button' onClick={this.cancelAssignment}>Cancel</button>
                 </div>
             </div>
         

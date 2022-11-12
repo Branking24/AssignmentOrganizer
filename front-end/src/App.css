@@ -1,29 +1,71 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-intro {
+  font-size: 75px;
+  color: #483D8B;
+  margin: 20px;
+}
+
+.input-label {
+  font-size: 30px;
+}
+
+.input-box {
+  width: 400px;
+  height: 50px;
+  font-size: 30px;
 }
 
 .home_text_boxes {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  
+  align-items: center;
+  width: 100%;
+}
+
+.home_buttons {
+  margin: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.home-button {
+  font-size: 35px;
+  color: white;
+  border: solid 1px white;
+  background-color: #303030;
+  width: 300px;
+  height: 75px;
+  margin:5px;
+}
+
+.home-button:hover {
+  background-color: white;
+  color: #303030;
 }
 
 .home-text-group {
   display: flex;
-  justify-content: center;
-  margin: 20px;
-}
-
-.assignment-box {
-  border: 1px solid white;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.error-msg {
+  font-size: 25px;
+  margin-top: 20px;
 }
 
 .assignments-list {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,4 +80,221 @@
 .assignment-viewer-menu {
   display: flex;
   justify-content: space-between;
+  background-color: #303030;
+}
+
+.input-title {
+  font-size: 75px;
+  color: #483D8B;
+  margin: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.input-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-assignment-box {
+  width: 550px;
+  height: 50px;
+  font-size: 30px;
+}
+
+.input-button {
+  font-size: 35px;
+  color: white;
+  border: solid 1px white;
+  background-color: #303030;
+  width: 250px;
+  height: 65px;
+  margin:5px;
+}
+
+.input-button:hover {
+  background-color: white;
+  color: #303030;
+}
+
+.viewer-intro {
+  font-size: 95px;
+}
+
+.menu-button {
+  width: 50%;
+  height: 55px;
+  font-size: 35px;
+  background-color: #483D8B;
+  color: white;
+  margin-top: 5px;
+  margin: 5px;
+}
+
+.menu-button:hover {
+  background-color: white;
+  border: solid 1px #303030;
+  color: #303030;
+}
+
+.assignment-box {
+  border: solid 1px white;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.due-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  background-color: #483D8B;
+}
+
+.due-date {
+  font-weight: bold;
+  color: white;
+  font-size: 50px;
+}
+
+.name-description {
+  background-color: #303030;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.ind-assignment-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+.assignment-button {
+  width: 150px;
+  height: 35px;
+  font-size: 25px;
+  background-color: #483D8B;
+  color: white;
+  margin: 5px;
+  border: 0px;
+}
+
+.assignment-button:hover {
+  background-color: #303030;
+  border: solid 1px white;
+  color: white;
+}
+
+.assignment-name {
+  font-weight: bold;
+  color: white;
+  font-size: 35px;
+  width: 70%;
+  border-bottom: 3px solid #483D8B;
+}
+
+.class-description {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.class-name {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+#edit-button {
+  margin-top: 10px;
+}
+
+#delete-button {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+  .home-intro {
+    font-size: 40px;
+  }
+  
+  .input-title {
+    font-size: 40px;
+  }
+  
+  .input-label {
+    font-size: 20px;
+    margin: 0px;
+  }
+  
+  .input-box {
+    height: 30px;
+    width: 200px;
+  }
+  
+  .home-text-group {
+    justify-content: flex-start;
+  }
+  
+  .home-button {
+    width: 105px;
+    height: 35px;
+    font-size: 15px;
+  }
+  
+  .error-msg {
+    font-size: 20px;
+  }
+  
+  .input-assignment-box {
+    height: 30px;
+    width: 250px;
+  }
+  
+  .viewer-intro {
+    margin-top: 20px;
+    font-size: 40px;
+  }
+  
+  .menu-button {
+    height: 25px;
+    font-size: 15px;
+  }
+  
+  .due-date {
+    font-size: 20px;
+  }
+  
+  .assignment-name {
+    font-size: 20px;
+  }
+  
+  .class-name {
+    font-size: 15px;
+  }
+  
+  .description {
+    font-size: 10px;
+  }
+  
+  .assignment-button {
+    width: 50px;
+    font-size: 10px;
+    height: 20px;
+  }
 }

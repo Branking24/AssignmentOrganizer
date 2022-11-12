@@ -26,14 +26,20 @@ class Assignment extends React.Component {
     render() {
         return(
             <div class = 'assignment-box'>
-                <div class='ind-assignment-buttons'>
-                    <button onClick={this.editAssignment}>Edit</button>
-                    <button onClick={this.deleteAssignment}>Delete</button>
+                <div class='due-box'>
+                    <p class='due-date'>{this.props.currAssignment.dueDate}</p>
                 </div>
-                <p>{this.props.currAssignment.name}</p>
-                <p>{this.props.currAssignment.className}</p>
-                <p>{this.props.currAssignment.dueDate}</p>
-                <p>{this.props.currAssignment.description}</p>
+                <div class='name-description'>
+                    <p class='assignment-name'>{this.props.currAssignment.name}</p>
+                    <div class='class-description'>
+                        <p class='class-name'>{this.props.currAssignment.className}</p>
+                        <p class='description'>{this.props.currAssignment.description}</p>
+                    </div>
+                </div>
+                <div class='ind-assignment-buttons'>
+                    <button class='assignment-button' id='edit-button' onClick={this.editAssignment}>Edit</button>
+                    <button class='assignment-button' id='delete-button' onClick={this.deleteAssignment}>Delete</button>
+                </div>
             </div>
             );
     }
