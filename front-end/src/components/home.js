@@ -44,6 +44,7 @@ class Home extends React.Component {
           console.log("Invalid Credentials");
         }
         else {
+          this.setState({errorMsg: "Server Error"});
           console.log(error);
         }
     });
@@ -66,6 +67,9 @@ class Home extends React.Component {
         if (error.response.status === 409) {
           this.setState({errorMsg: "Username Already Taken"});
           console.log("Username Already Taken");
+        }
+        else {
+          this.setState({errorMsg: "Server Error"});
         }
       });
     }
